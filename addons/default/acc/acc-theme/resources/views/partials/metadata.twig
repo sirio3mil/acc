@@ -5,7 +5,9 @@
 <meta name="author" content="">
 
 <title>
-    {{ config_get("streams::distribution.name") }} &#8250; {{ trans(template.meta_title) }}
+    {{ setting_value('streams::name', config_get('streams::distribution.name')) }}
+    &#8250;
+    {{ trans(template.meta_title) }}
 </title>
 
 {% block opengraph %}
@@ -17,10 +19,6 @@
     <meta property="og:url" content="{{ url_current() }}"/>
     <meta property="og:type" content="website"/>
 {% endblock %}
-
-<!-- Favicons -->
-{{ favicons("theme::img/favicon.png") }}
-
 
 <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
 {{ asset_add("theme.css", "theme::css/bootstrap.css") }}
