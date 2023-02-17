@@ -1,0 +1,9 @@
+{
+    "name": "acc/awesome-theme",
+    "type": "streams-addon",
+    "autoload": {
+        "psr-4": {
+            "Acc\\AwesomeTheme\\": "src/"
+        }
+    }
+}
