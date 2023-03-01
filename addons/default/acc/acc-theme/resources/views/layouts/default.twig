@@ -9,10 +9,47 @@
 
 <body>
 
+{% if (request_path() == '/') %}
+<header class="header-with-background-image">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-home navbar-fixed-top">
+    <div class="container">
+
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll"></div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="{{ url_route('anomaly.module.posts::posts.index') }}">Noticias</a>
+                </li>
+            </ul>
+
+            {{ structure()
+            .linkAttributesDropdown({'data-toggle': 'dropdown'})
+            .listClass('nav navbar-nav navbar-right')
+            .childListClass('dropdown-menu')
+            .cache({'namespace': 'user'})
+            .render()|raw }}
+        </div>
+        <!-- /.navbar-collapse -->
+
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+</header>
+{% else %}
 {% include "theme::partials/navigation" %}
+{% endif %}
 
 <div id="content">
+    {% if (request_path() == '/') %}
+    <div class="container container-small-padding-top">
+    {% else %}
     <div class="container">
+    {% endif %}
         {% include "theme::partials/breadcrumbs" %}
         {% include "theme::partials/messages" %}
 

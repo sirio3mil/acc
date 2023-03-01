@@ -4396,6 +4396,12 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   background-color: #057e33;
   border-color: transparent;
 }
+.navbar-home {
+  background-color: transparent !important;
+}
+.navbar-home .container {
+  padding-top: 400px !important;
+}
 .navbar-default .navbar-brand {
   color: #ffffff;
 }
@@ -6948,6 +6954,9 @@ header#header .intro-text .skills {
   padding-top: 150px;
   padding-bottom: 50px;
 }
+.container-small-padding-top{
+  padding-top: 50px !important;
+}
 @media (min-width: 768px) {
   header .container {
     padding-top: 200px;
@@ -7160,7 +7169,7 @@ footer .footer-col {
 }
 footer .footer-below {
   padding: 25px 0;
-  background-color: #233140;
+  background-color: #5ba64c;
 }
 .btn-social {
   display: inline-block;
@@ -7249,4 +7258,12 @@ footer .footer-below {
 .portfolio-modal .modal-backdrop {
   opacity: 0;
   display: none;
+}
+/* Estilos CSS para la cabecera con imagen de fondo */
+.header-with-background-image {
+  background-image: url('../addons/default/acc/acc-theme/resources/img/team-acc.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+  /* Aquí puedes agregar otros estilos CSS para la cabecera con imagen de fondo */
 }
